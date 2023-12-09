@@ -1,3 +1,22 @@
 <div class="map-container">
+  <div 
+    id="breweries"
+    data-latitude=<%= @location.latitude %>
+    data-longitude=<%= @location.longitude %>
+  >
+    <h2>Breweries in <%= @location.name %></h2>
+    <ol>
+      <% @breweries.each do |brewery| %>
+        <li
+          class="brewery-list-item"
+          data-latitude=<%= brewery.latitude %>
+          data-longitude=<%= brewery.longitude %>
+        >
+          <h4><%= brewery.name %></h4>
+          <p><%= brewery.address %></p>
+        </li>
+      <% end %>
+    </ol>
+  </div>
   <div id="map"></div>
 </div>
